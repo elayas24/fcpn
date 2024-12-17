@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica Final</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <div class="logo">
+                <img src="img/logofcpn.png" alt="">
+            </div>
+            <h1>Práctica Final</h1>
+            <h2>Laboratorio de Diseño y JavaScript</h2>
+        </header>
+        <aside id="aside1">
+            <div>
+                <input type="submit" name="ejer1" id="ejer1" value="Ejercicio 1" onclick="ejercicio1()">
+                <input type="submit" name="ejer1" id="ejer2" value="Ejercicio 2" onclick="ejercicio2()">
+                <input type="submit" name="ejer1" id="ejer3" value="Ejercicio 3" onclick="ejercicio3()">
+                <input type="submit" name="ejer1" id="ejer4" value="Ejercicio 4" onclick="ejercicio4()">
+                <input type="submit" name="ejer1" id="ejer5" value="Ejercicio 5" onclick="ejercicio5()">
+                <input type="submit" name="ejer1" id="ejer6" value="Ejercicio 6" onclick="ejercicio6()">
+                <input type="submit" name="ejer1" id="ejer7" value="Ejercicio 7" onclick="ejercicio7()">
+                <input type="submit" name="ejer1" id="ejer8" value="Ejercicio 8" onclick="ejercicio8()">
+            </div>
+        </aside>
+        <main>
+            <div id="princi">
+                <br><br><br><br><br><br><h1>Elija un Ejercicio de los Menus</h1>
+            </div>
+        </main>
+        <aside id="aside2">
+            <div>
+                
+                <input type="submit" name="ejer1" id="ejer9" value="Ejercicio 9" onclick="ejercicio9()">
+                <input type="submit" name="ejer1" id="ejer10" value="Ejercicio 10" onclick="ejercicio1()">
+                <input type="submit" name="ejer1" id="ejer11" value="Ejercicio 11" onclick="ejercicio11()">
+                <input type="submit" name="ejer1" id="ejer12" value="Ejercicio 12" onclick="ejercicio12()">
+                <input type="submit" name="ejer1" id="ejer13" value="Ejercicio 13" onclick="ejercicio13()">
+                <input type="submit" name="ejer1" id="ejer14" value="Ejercicio 14" onclick="ejercicio14()">
+                <input type="submit" name="ejer1" id="ejer15" value="Ejercicio 15" onclick="ejercicio15()">
+                <input type="submit" name="ejer1" id="ejer16" value="Ejercicio 16" onclick="ejercicio16()">
+            </div>
+        </aside>
+        <footer>
+            <p>Hecho por: </p>
+            <p>Elias Benjamin Vargas Valdivia</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+<script>
+    function ejercicio1(){
+        texto="Genera Serie Fibonacci "+"<br><br><br>";
+        texto+="Ingrese un numero: <br><br>";
+        texto+="<input type='text' name='n1' id='n1' class='texto'><br><br>";
+        texto+="<input type='submit' name='b1' value='GENERAR' class='boton' onclick='fibo()'><br><br>";
+        texto+="<fieldset class='texto'><p id='res'></p></fieldset><br><br>"
+        document.getElementById('princi').innerHTML=texto;
+    }
+    function fibo(){
+        n = document.getElementById('n1').value;
+        a = -1;
+        b = 1;
+        r = "";
+        for (let i = 0; i < n; i++) {
+            f = a+b;
+            r +=f+", "
+            a = b;
+            b = f;
+        }
+        document.getElementById('res').innerHTML=r;
+    }
+
+    function ejercicio2(){
+        texto="Genera Número Binarios "+"<br><br><br>";
+        texto+="Ingrese un numero: <br><br>";
+        texto+="<input type='text' name='n1' id='n1' class='texto'><br><br>";
+        texto+="<input type='submit' name='b1' value='GENERAR' class='boton' onclick='binario()'><br><br>";
+        texto+="<fieldset class='texto'><p id='res'></p></fieldset><br><br>"
+        document.getElementById('princi').innerHTML=texto;
+    }
+    function binario() {
+        n = parseInt(document.getElementById('n1').value);
+        r="";
+        for (let i = 0; i < n; i++) {
+            r += i.toString(2)+", ";
+        }
+        document.getElementById('res').innerHTML=r;
+    }
+
+    function ejercicio3(){
+        texto="Genera N Factoriales y Calcula la Suma "+"<br><br><br>";
+        texto+="Ingrese un numero: <br><br>";
+        texto+="<input type='text' name='n1' id='n1' class='texto'><br><br>";
+        texto+="<input type='submit' name='b1' value='GENERAR' class='boton' onclick='facto()'><br><br>";
+        texto+="<fieldset class='texto'><p id='res'></p></fieldset><br><br>"
+        document.getElementById('princi').innerHTML=texto;
+    }
+    function facto(){
+        n = parseInt(document.getElementById('n1').value);
+        r = "S = ";
+        f = 1;
+        s = 0;
+        for (let i = 1; i <= n; i++) {
+            f *= i;
+            r += i+"! "+"+ ";
+            s += f;
+        }
+        r += " = "+s;
+        document.getElementById('res').innerHTML=r;
+    }
+
+    function ejercicio4(){
+        texto="Rota un Número >10 por la Derecha e Izquierda "+"<br><br><br>";
+        texto+="Ingrese un numero: <br><br>";
+        texto+="<input type='text' name='n1' id='n1' class='texto'><br><br>";
+        texto+="<input type='submit' name='b1' value='GENERAR' class='boton' onclick='rota()'><br><br>";
+        texto+="<fieldset class='texto'><p id='res'></p></fieldset><br><br>"
+        document.getElementById('princi').innerHTML=texto;
+    }
+    function rota(){
+        n = parseInt(document.getElementById('n1').value);
+        a = n%10;
+        b = parseInt(Math.log10(n));
+        nn = parseInt(n/10);
+        aa = a*Math.pow(10,b)+nn;
+        c = parseInt(n/Math.pow(10,b));
+        nnn = parseInt(n%Math.pow(10,b));
+        cc = nnn*10+c;
+        r = "Rote a la derecha: "+aa+"<br>"+"Rote a la izquierda: "+cc;
+        document.getElementById('res').innerHTML=r;
+    }
+
+    function ejercicio5(){
+        texto="Rota los digitos pares de un Número > 6 dígitos "+"<br><br><br>";
+        texto+="Ingrese un numero: <br><br>";
+        texto+="<input type='text' name='n1' id='n1' class='texto'><br><br>";
+        texto+="<input type='submit' name='b1' value='GENERAR' class='boton' onclick='cambia()'><br><br>";
+        texto+="<fieldset class='texto'><p id='res'></p></fieldset><br><br>"
+        document.getElementById('princi').innerHTML=texto;
+    }
+    function cambia(){
+        n = parseInt(document.getElementById('n1').value);
+        nn = parseInt(Math.log10(n));
+        c = 0;
+        sw = 0;
+        r = 0;
+        while (n>0) {
+            a = parseInt(n/Math.pow(10,nn));
+            n = parseInt(n%Math.pow(10,nn));
+            if(a%2==0 && sw==0){
+                pos = nn;
+                b = a;
+                sw = 1;
+            }else{
+                if(a%2==0){
+                    c = a;
+                    a = b;
+                    b = c;
+                }
+            }
+            r = r*10+a;
+            nn--;
+        }
+        b = parseInt(r/Math.pow(10,pos));
+        a = b%10;
+        b = parseInt(b/10);
+        r = parseInt(r%Math.pow(10,pos));
+        r = (b*10+c)*Math.pow(10,pos)+r;
+        document.getElementById('res').innerHTML=r;
+    }
+
+    function ejercicio6(){
+        texto="Muestra los Dígitos repetidos de un Número > 100 "+"<br><br><br>";
+        texto+="Ingrese un numero: <br><br>";
+        texto+="<input type='text' name='n1' id='n1' class='texto'><br><br>";
+        texto+="<input type='submit' name='b1' value='GENERAR' class='boton' onclick='repe()'><br><br>";
+        texto+="<fieldset class='texto'><p id='res'></p></fieldset><br><br>"
+        document.getElementById('princi').innerHTML=texto;
+    }
+    function repe(){
+        n = parseInt(document.getElementById('n1').value);
+        r = 0;
+        while(n>0){
+            a = n%10;
+            n = parseInt(n/10);
+            c = n;
+            d = 0;
+            while(c>0){
+                b = c%10;
+                c = parseInt(c/10);
+                if(a==b){
+                    d++;
+                    e = b;
+                }
+            }
+            if(d>0){
+                r = r*10+e;
+            }
+        }
+        document.getElementById('res').innerHTML=r;
+    }
+
+    function ejercicio7(){
+        texto="Verifica si es Capícua"+"<br><br><br>";
+        texto+="Ingrese un numero: <br><br>";
+        texto+="<input type='text' name='n1' id='n1' class='texto'><br><br>";
+        texto+="<input type='submit' name='b1' value='GENERAR' class='boton' onclick='capi()'><br><br>";
+        texto+="<fieldset class='texto'><p id='res'></p></fieldset><br><br>"
+        document.getElementById('princi').innerHTML=texto;
+    }
+    function capi(){
+        n = parseInt(document.getElementById('n1').value);
+        a = n;
+        c = 0;
+        d = 1;
+        while(a>0){
+            b = a%10;
+            a = parseInt(a/10);
+            c = c*10+b;
+            d *= 10;
+        }
+        if(n==c){
+            r = "ES CAPICUA";
+        }else{
+            r = "NO ES CAPICUA";
+        }
+        document.getElementById('res').innerHTML=r;
+    }
+
+    function ejercicio8(){
+        texto="Verifica si es Primo"+"<br><br><br>";
+        texto+="Ingrese un numero: <br><br>";
+        texto+="<input type='text' name='n1' id='n1' class='texto'><br><br>";
+        texto+="<input type='submit' name='b1' value='GENERAR' class='boton' onclick='primo()'><br><br>";
+        texto+="<fieldset class='texto'><p id='res'></p></fieldset><br><br>"
+        document.getElementById('princi').innerHTML=texto;
+    }
+    function primo(){
+        n = parseInt(document.getElementById('n1').value);
+        c = 0;
+        for (let i = 1; i <= n; i++) {
+            if(n%i==0){
+                c++;
+            }
+        }
+        if(c==2){
+            r = "Es Primo";
+        }else{
+            r = "No es Primo";
+        }
+        document.getElementById("res").innerHTML=r;
+    }
+
+    function ejercicio9(){
+        texto="Genera N Primos"+"<br><br><br>";
+        texto+="Ingrese un numero: <br><br>";
+        texto+="<input type='text' name='n1' id='n1' class='texto'><br><br>";
+        texto+="<input type='submit' name='b1' value='GENERAR' class='boton' onclick='genprimo()'><br><br>";
+        texto+="<fieldset class='texto'><p id='res'></p></fieldset><br><br>"
+        document.getElementById('princi').innerHTML=texto;
+    }
+    function genprimo(){
+        n = parseInt(document.getElementById('n1').value);
+        a = 1;
+        r = "";
+        while(n>0){
+            c = 0;
+            for (let i = 1; i <= a; i++) {
+                if(a%i==0){
+                    c++;
+                }
+            }
+            if(c==2){
+                r += a+", ";
+                n--;
+            }
+            a++;
+        }
+        document.getElementById("res").innerHTML=r;
+    }
+
+    function ejercicio11(){
+        texto="Genera Serie Exponencial"+"<br><br>";
+        texto+="Ingrese cantidad de terminos: <br><br>";
+        texto+="<input type='text' name='n1' id='n1' class='texto'><br><br>";
+        texto+="Ingrese un numero: <br><br>";
+        texto+="<input type='text' name='n1' id='n2' class='texto'><br><br>";
+        texto+="<input type='submit' name='b1' value='GENERAR' class='boton' onclick='expo()'><br><br>";
+        texto+="<fieldset class='texto'><p id='res'></p></fieldset><br><br>"
+        document.getElementById('princi').innerHTML=texto;
+    }
+    function factorial(n){
+        if (n === 0 || n === 1) return 1;
+        return n * factorial(n - 1);
+    }
+    function expo() {
+        n = parseInt(document.getElementById('n1').value);
+        x = parseInt(document.getElementById('n2').value);
+        r = 0;
+        for (let i = 0; i < n; i++) {
+            r += Math.pow(x,i) / factorial(i);
+        }
+        document.getElementById('res').innerHTML=r;
+    }
+
+    function ejercicio12(){
+        texto="Verifica si una Palabra es Palíndromo"+"<br><br><br>";
+        texto+="Ingrese una palabra: <br><br>";
+        texto+="<input type='text' name='n1' id='n1' class='texto'><br><br>";
+        texto+="<input type='submit' name='b1' value='GENERAR' class='boton' onclick='palin()'><br><br>";
+        texto+="<fieldset class='texto'><p id='res'></p></fieldset><br><br>"
+        document.getElementById('princi').innerHTML=texto;
+    }
+    function palin(){
+        p = document.getElementById('n1').value.toLowerCase();
+        r = "";
+        b = "";
+        for (let i = 0; i < p.length; i++) {
+            a = p.substring(i, i+1);
+            b = a + b;
+        }
+        if(p===b){
+            r = "ES PALÍNDROMO";
+        }else{
+            r = "NO ES PALÍNDROMO";
+        }
+        document.getElementById('res').innerHTML=r; 
+    }
+
+    function ejercicio13(){
+        texto="Invierte una Palabra"+"<br><br><br>";
+        texto+="Ingrese una palabra: <br><br>";
+        texto+="<input type='text' name='n1' id='n1' class='texto'><br><br>";
+        texto+="<input type='submit' name='b1' value='GENERAR' class='boton' onclick='invierte()'><br><br>";
+        texto+="<fieldset class='texto'><p id='res'></p></fieldset><br><br>"
+        document.getElementById('princi').innerHTML=texto;
+    }
+    function invierte(){
+        p = document.getElementById('n1').value.toLowerCase();
+        r = "";
+        for (let i = 0; i < p.length; i++) {
+            a = p.substring(i, i+1);
+            r = a + r;
+        }
+        document.getElementById('res').innerHTML=r; 
+    }
+
+    function ejercicio14(){
+        texto="Calculadora"+"<br><br>";
+        texto+="Ingrese un numero: <br>";
+        texto+="<input type='text' name='n1' id='n1' class='texto'><br>";
+        texto+="Ingrese un numero: <br>";
+        texto+="<input type='text' name='n2' id='n2' class='texto'><br>";
+        texto+="Ingrese Operador: <br>";
+        texto+="<input type='text' name='n3' id='n3' class='texto' placeholder='+  -  *  /  ^  !'><br>";
+        texto+="<input type='submit' name='b1' value='GENERAR' class='boton' onclick='calcu()'><br>";
+        texto+="<fieldset class='texto'><p id='res'></p></fieldset><br>"
+        document.getElementById('princi').innerHTML=texto;
+    }
+    function calcu(){
+        n1 = parseFloat(document.getElementById('n1').value);
+        n2 = parseFloat(document.getElementById('n2').value);
+        s = document.getElementById('n3').value;
+        r = 0;
+        switch (s) {
+            case "+":
+                r = (n1 + n2);
+                break;
+            case '-':
+                r = n1 - n2;
+                break;
+            case '*':
+                r = n1 * n2;
+                break;
+            case '/':
+                r = n1 / n2;
+                break;
+            case '^':
+                r = Math.pow(n1,n2);
+                break;
+            case '!':
+                f1=1;
+                for (let i = 1; i < n1; i++) {
+                    f1 *= i;
+                }
+                f2=1;
+                for (let i = 1; i < n2; i++) {
+                    f2 *= i;
+                }
+                r = n1+"! = "+f1+"<br>"+n2+"! = "+f2;
+                break;
+            default:
+                r = "No existe ese operador";
+                break;
+        }
+        document.getElementById('res').innerHTML=r;
+    }
+</script>

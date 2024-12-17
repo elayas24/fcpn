@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contenedor{
+    position: relative;
+    width: 1000px;
+    height: 800px;
+    margin: auto;
+    background-color: rgb(186, 244, 225);
+}
+
+header{
+    position: absolute;
+    width: 1000px;
+    height: 150px;
+    background-color: rgba(0, 255, 170, 0.621);
+}
+
+header h1{
+    margin: 25px 0px 0px 450px;
+}
+
+header h2{
+    margin: 10px 0px 0px 370px;
+}
+
+.logo{
+    position: absolute;
+    margin: 15px 5px 5px 65px;
+}
+
+.logo img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+#aside1{
+    position: absolute;
+    top: 152px;
+    width: 249px;
+    height: 550px;
+    margin: 0px 1px 0px 0px;
+    background-color: rgba(57, 103, 88, 0.42);
+    
+}
+
+#aside1 div{
+    margin: 70px 0px 0px 65px;
+    width: 100px;
+}
+
+input{
+    text-decoration: none;
+    border: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: darkslategray;
+    font-size: 25px;
+    margin: 0px 0px 15px 0px;
+    background-color: rgba(57, 103, 88, 0);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+input:hover{
+    background-color: rgb(0, 153, 255);
+    color: black;
+}
+
+input:active{
+    color: white;
+}
+
+#aside2{
+    position: absolute;
+    top: 152px;
+    width: 249px;
+    height: 550px;
+    margin: 0px 0px 0px 751px;
+    background-color: rgba(57, 103, 88, 0.42);
+}
+#aside2 div{
+    margin: 70px 0px 0px 60px;
+    width: 100px;
+}
+
+main{
+    position: absolute;
+    top: 152px;
+    width: 498px;
+    height: 550px;
+    margin: 0px 1px 0px 251px;
+    background-color: rgb(1, 62, 62);
+}
+
+#princi{
+    margin: 25px 13px;
+    padding: 10px;
+    width: 450px;
+    min-height: 100px;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+}
+
+footer{
+    position: absolute;
+    top: 704px;
+    width: 1000px;
+    height: 98px;
+    background-color: rgba(0, 255, 255, 0.304);
+    text-align: center;
+}
+
+footer p{
+    margin: 10px 0px 0px 0px;
+}
+
+.texto{
+    text-align: center;
+    background-color: darkolivegreen;
+    color: black;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px;
+    min-height: 30px;
+    max-height: 180px;
+}
+
+.texto:hover{
+    background-color: darkolivegreen;
+}
+
+.boton{
+    background-color: darkgreen;
+    border-radius: 10px;
+    color: white;
+}
+
+.boton:hover{
+    background-color: rgb(88, 100, 0);
+    color: black;
+}
+
+.boton:active{
+    color: black;
+}
